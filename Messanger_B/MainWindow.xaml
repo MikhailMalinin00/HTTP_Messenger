@@ -1,0 +1,39 @@
+﻿<Window x:Class="Messenger_B.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Messenger_B"
+        mc:Ignorable="d"
+        Style="{DynamicResource WindowStyle}"
+        Icon="/Images/Icon.png"
+        Title="Лучший мессенджер" Height="450" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5" Grid.Column="1" Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Border Style="{DynamicResource BorderStyle}">
+                    <StackPanel x:Name="MessegesSP" Orientation="Vertical" Margin="10"/>
+                </Border>
+            </ScrollViewer>
+        </Grid>
+        <Grid Margin="5" Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SendText" Style="{DynamicResource TextBoxStyle}" KeyUp="TBKeyUp" Grid.Column="0"/>
+            <Button Content="Отправить" Style="{DynamicResource MainButtonStyle}" Click="SendClick" Grid.Column="1"/>
+        </Grid>
+    </Grid>
+</Window>
